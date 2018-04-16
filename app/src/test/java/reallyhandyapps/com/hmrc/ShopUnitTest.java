@@ -71,4 +71,19 @@ public class ShopUnitTest {
         items.add(new Orange("Orange",25));
         Assert.assertEquals(75,shop.checkoutWithOffer(items));
     }
+
+    @Test
+    public void testCheckoutWithMixedBasket(){
+        Shop shop = new Shop();
+        ArrayList<Item> items = new ArrayList<>();
+        items.add(new Orange("Orange",25));
+        items.add(new Orange("Orange",25));
+        items.add(new Orange("Orange",25));
+        items.add(new Apple("Apple",60));
+        items.add(new Apple("Apple",60));
+        items.add(new Apple("Apple",60));
+        items.add(new Apple("Apple",60));
+        items.add(new Apple("Apple",60));
+        Assert.assertEquals(230,shop.checkoutWithOffer(items));
+    }
 }
